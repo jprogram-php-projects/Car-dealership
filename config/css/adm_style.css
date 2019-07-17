@@ -1,0 +1,45 @@
+header{
+	margin-top: 0px;
+	height: 50px;
+	background-color: #2E8B57;
+}
+
+body{
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	background-color: rgb(245,245,245);
+}
+
+button{
+	background-color: #2F4F4F;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+}
+
+
+button{
+    padding-left: 10px;
+    border-left-width: 10px;
+    width: 90px;
+    height: 35px;
+    padding-bottom: 10px;
+    border-bottom-width: 10px;
+    border-top-width: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+main #action{
+	padding: 20px 40px;
+	border: none;
+	border-radius: 2px;
+	background-color: rgb(173,216,230);
+
+	padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
