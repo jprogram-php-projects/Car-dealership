@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang = "pt-br">
+	<head>
+		<meta charset = "utf-8"/>
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="../config/css/style.css">
+		<script type="text/javascript" src="../config/js/jquery-3.4.1.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<nav></nav>
+		</header>
+
+		<section>
+			<div id="load"></div>
+				<br/><br/><br/>
+				<img src="../config/images/lock.png">
+				<form  id = "logar" action="../control/LoginController.php" method="POST">
+				  <div>
+				  	<input type="text" id="login" name = "login" placeholder="Login" /><br/>
+				  </div>
+				  <br>
+				  <div>
+				  	<input type="password" id="senha" name="senha" placeholder="Senha"/>
+				  </div>
+				  <br>
+
+				  <br>
+				  <button id = "btnLogar" type="submit">Logar</button>
+				  <button id = "btnLimpar" type="reset">Limpar</button>
+				</form>
+				<script type="text/javascript" src="../config/js/script.js"></script>	 	 
+		</section>
+	</body>
+
+</html>
