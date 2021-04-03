@@ -1,0 +1,22 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    ports:
+      - 80:80 # Troque a porta caso seja necessário
+      - 443:443
+    volumes:
+      - .:/var/www/html
+    links:
+      - db
+  db:
+    image: mariadb:latest
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: jprogram
+      MYSQL_USER: jprogram
+      MYSQL_PASSWORD: jeff
+      MYSQL_ROOT_PASSWORD: jeff
