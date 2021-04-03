@@ -4,13 +4,14 @@
 		private $conn;
 
 		private function __construct(){
-			$server = "localhost";
-			$user = "root";
-			$password = "";
-			$db = "concessionaria";
+			$server = "127.0.0.1";
+			$user = "jprogram";
+			$password = "jeff";
+			$db = "phprs";
+			$port = "3306";
 
 			try{
-				$this->conn = new PDO("mysql:host=$server;dbname=$db", $user, $password);
+				$this->conn = new PDO("mysql:host=$server:3307;dbname=$db", $user, $password);
 				$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			}
 
