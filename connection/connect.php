@@ -11,7 +11,7 @@
 			$port = "3306";
 
 			try{
-				$this->conn = new PDO("mysql:host=$server:3307;dbname=$db", $user, $password);
+				$this->conn = new PDO("mysql:host=mysql;port=$port;dbname=$db", $user, $password);
 				$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			}
 
@@ -20,7 +20,7 @@
 			}
 		}
 
-		public function getInstance(){
+		public static function getInstance(){
 			if(self::$instance == false){
 				self::$instance = new Connect();
 			}

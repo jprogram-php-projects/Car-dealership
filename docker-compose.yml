@@ -1,4 +1,12 @@
 version: '3'
+
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.2.0.0/16
+
 services:
   app:
     build:
@@ -10,7 +18,10 @@ services:
     volumes:
       - .:/var/www/html
     links:
-      - mysql
+      - mysql:mysql
+    networks:
+      mynet:
+        ipv4_address: 10.2.0.2
 
   mysql:
     image: mysql:5.7
@@ -20,9 +31,13 @@ services:
     volumes:
       - mysql:/var/lib/mysql/
     environment:
-      MYSQL_DATABASE: 'phprs'
-      MYSQL_USER: 'jprogram'
-      MYSQL_PASSWORD: 'jeff'
+      - MYSQL_DATABASE=phprs
+      - MYSQL_ROOT_PASSWORD=jeff
+      - MYSQL_USER=jprogram
+      - MYSQL_PASSWORD=jeff
+    networks:
+      mynet:
+        ipv4_address: 10.2.0.3
 
 volumes:
   mysql:
