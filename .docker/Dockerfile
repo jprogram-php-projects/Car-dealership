@@ -1,12 +1,9 @@
-FROM ubuntu:20.04
+FROM php:5.6-apache
 
 RUN apt-get update \
     && apt-get install -y \
         nmap \
         vim
-
-
-FROM php:5.6-apache
 
 COPY . /var/www/html
 COPY .docker/vhost.conf /etc/apache2/sites-available/000-default.conf
